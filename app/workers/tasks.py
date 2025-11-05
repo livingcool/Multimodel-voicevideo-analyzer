@@ -112,7 +112,7 @@ def ingest_audio(self, file_path: str, source_id: str, metadata: dict):
         self.update_state(state=TaskStatus.FAILURE.value, meta=meta)
         raise
 
-@celery_app.task(bind=True, name="app.workers.tasks.ingest_image")
+@celery_app.task(bind=True, max_retries=5)
 def ingest_image(self, file_path: str, source_id: str, metadata: dict):
     """
     Celery task to process an image file.
