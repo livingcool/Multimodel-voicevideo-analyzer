@@ -1,0 +1,39 @@
+# --- Core Application ---
+fastapi[all]>=0.104.0       # The main web framework
+uvicorn[standard]>=0.23.2   # ASGI server to run FastAPI
+pydantic>=2.4.2             # For data validation (schemas.py)
+pydantic-settings>=2.0.3    # For loading .env files (config.py)
+python-dotenv>=1.0.0        # Used by pydantic-settings
+
+# --- Asynchronous Workers ---
+celery>=5.3.6
+redis>=5.0.1                # Broker/backend for Celery
+
+# --- LLM / AI Providers ---
+google-generativeai>=0.3.2  # For Gemini
+openai>=1.3.0               # For OpenAI (even if not default)
+
+# --- Vector Store & Embeddings ---
+sentence-transformers>=2.2.2 # For embedding model (all-MiniLM-L6-v2)
+faiss-cpu                   # For local vector store (or faiss-gpu if you have it)
+# hnswlib                   # Alternative to FAISS
+
+# --- Media Processing (Future Use) ---
+# We can add these now to prepare
+# opencv-python-headless    # For video frame extraction
+# ffmpeg-python             # For audio extraction
+# pytesseract               # For OCR
+# pillow                    # For image preprocessing
+
+# --- Database (Metadata Store) ---
+sqlalchemy>=2.0.23          # ORM for metadata.db
+psycopg2-binary             # Driver for Postgres (if you use it)
+# alembic                   # For database migrations (good for prod)
+
+# --- Utilities ---
+python-multipart            # For file uploads (Form(...))
+# ... (all your other requirements)
+sarvamai>=0.1.0  # Add this for the official Sarvam AI SDK
+ffmpeg-python>=0.2.0
+# ... (rest of requirements)
+opencv-python-headless>=4.8.1 # For keyframe extraction

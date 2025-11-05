@@ -1,0 +1,15 @@
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+
+# Ignore virtual environment folder
+.venv/
+
+# --- CRITICAL: Ignore Secrets and Local Data ---
+.env               # Your file containing API keys (Google, Sarvam)
+/data/* # All local storage (uploads, vectors, transcripts, metadata.db)
+!/data/.gitkeep    # Exception to track the empty folder structure
+# Other ignores...
+
+# --- Ignore the misidentified ffmpeg binary directory ---
+ffmpeg
